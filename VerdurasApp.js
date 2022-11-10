@@ -1,6 +1,6 @@
-moduloFrutas = require("./VerdurasModulo")
-console.log("Bienvenido\n"+ moduloFrutas)
+const fs = require("fs");
+let verduras = JSON.parse((fs.readFileSync("Verduras.json", 'utf-8')))
 
-function greeting() {
-    return "Hello world"
-}
+const procesadora = require("./verdurasModulo");
+
+procesadora(verduras)
